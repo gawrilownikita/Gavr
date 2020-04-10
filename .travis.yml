@@ -1,0 +1,12 @@
+language: python
+addons: 
+  SonarCloud:
+    organization: "gawrilownikit"
+    token: 1342e1ad03aea8205fd390811d4a8c667017ed15
+install:
+  - pip install coverage coveralls
+  - pip install -I -r requirements.txt
+script:
+  - coverage run -m --source=. pytest 
+after_success:
+  - coveralls
